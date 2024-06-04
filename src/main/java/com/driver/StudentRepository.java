@@ -32,6 +32,7 @@ public class StudentRepository {
             // your code goes here
             teacherStudentMapping.putIfAbsent(teacher, new ArrayList<>());
             teacherStudentMapping.get(teacher).add(student);
+            teacherMap.get(teacher).setNumberOfStudents(teacherStudentMapping.get(teacher).size());
         }
     }
 

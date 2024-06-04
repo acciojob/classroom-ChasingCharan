@@ -38,12 +38,12 @@ public class StudentRepository {
 
     public Student findStudent(String student){
         // your code goes here
-        return studentMap.getOrDefault(student,null);
+        return studentMap.get(student);
     }
 
     public Teacher findTeacher(String teacher){
         // your code goes here
-        return teacherMap.getOrDefault(teacher,null);
+        return teacherMap.get(teacher);
     }
 
     public List<String> findStudentsFromTeacher(String teacher){

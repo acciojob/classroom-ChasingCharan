@@ -12,7 +12,6 @@ public class StudentService {
     StudentRepository studentRepository;
 
     public void addStudent(Student student){
-
         studentRepository.saveStudent(student);
     }
 
@@ -25,6 +24,7 @@ public class StudentService {
     }
 
     public Student findStudent(String studentName){
+
         return studentRepository.findStudent(studentName);
     }
 
@@ -41,12 +41,10 @@ public class StudentService {
     }
 
     public void deleteTeacher(String teacher){
-
         studentRepository.deleteTeacher(teacher);
     }
 
     public void deleteAllTeachers(){
-
         studentRepository.deleteAllTeachers();
     }
 }

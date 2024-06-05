@@ -32,7 +32,9 @@ public class StudentRepository {
     public void saveStudentTeacherPair(String student, String teacher){
         if(studentMap.containsKey(student) && teacherMap.containsKey(teacher)){
             // your code goes here
-            teacherStudentMapping.computeIfAbsent(teacher, k -> new ArrayList<>()).add(student);
+            teacherStudentMapping.putIfAbsent(teacher, new ArrayList<>());
+            teacherStudentMapping.get(teacher).add(student);
+            teacherMap.get(teacher).setNumberOfStudents(teacherStudentMapping.get(teacher).size());
         }
     }
 
